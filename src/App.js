@@ -1,15 +1,19 @@
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import React from "react";
-import socket from "./components/socket";
 
-import JoinForm from "./components/JoinForm";
+
+
+
+import JoinBlock from "./components/JoinBlock/JoinBlock";
 
 function App() {
 
+  const [state, dispatch] = React.useReducer(reducer, initialState);
+
   return (
 
-     <JoinForm/>
+     <JoinBlock/>
 
   );
 }
