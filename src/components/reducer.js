@@ -1,9 +1,14 @@
 export default (state, action) => {
-    switch (key) {
+    switch (action.type) {
         case 'IS_AUTH':
+            return {
+            ...state,
+                isAuth: true,
+                chatID: action.payload.chatID,
+                userName: action.payload.userName,
+            };
 
-
-            break
-
+        default:
+            return state;
     }
 }

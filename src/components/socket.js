@@ -4,7 +4,7 @@ import {io} from 'socket.io-client'
 // so i have to know where from take it
 // and them use in ui*/
 
-const socket = io('http://localhost:7212', {transports:['websocket']});
+const socket = io({transports:['websocket']});
 /*// there was an issue when i was using proxy from package.json
 // i was not able to determine transposts type in package.json
 // but saving proxy rifht here would be unwise, because when i am changing the server side proxy
