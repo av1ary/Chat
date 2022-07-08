@@ -1,10 +1,13 @@
-import './Joinblock.modules.css';
+
 /*// connecting it with its css, but mostly i with bootstrap*/
 import 'bootstrap/dist/css/bootstrap.min.css'
 /*// so it it actual bootstrap*/
 import React, {useState} from 'react';
 import axios from 'axios';
-/*// i am using webstorm and it is automatically imports everything i need from react library
+import classes from './Joinblock.module.css';
+/*// i am using webstorm and it
+
+is automatically imports everything i need from react library
 * axios is used for api post and gets*/
 
 
@@ -32,11 +35,11 @@ function JoinBlock(props) {
 
     return (
 
-      <div className='Auth-form-container'>
-          <form className='Auth-form'>
-              <div className='Auth-form-content'>
+      <div className={classes.Auth_form_container}>
+          <form className={classes.Auth_form}>
+              <div className={classes.Auth_form_content}>
 
-                  <h3 className='Auth-form-title'>Join Chat</h3>
+                  <h3 className={classes.Auth_form_title}>Join Chat</h3>
 
                   <div className='form-group mt-3'>
                       <label>Chat ID</label>

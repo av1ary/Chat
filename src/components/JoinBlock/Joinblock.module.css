@@ -1,5 +1,5 @@
 
-.Auth-form-container {
+.Auth_form_container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@
     height: 100vh;
 }
 
-.Auth-form {
+.Auth_form {
     width: 420px;
     box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
     padding-top: 30px;
@@ -16,12 +16,12 @@
     background-color: white;
 }
 
-.Auth-form-content {
+.Auth_form_content {
     padding-left: 12%;
     padding-right: 12%;
 }
 
-.Auth-form-title {
+.Auth_form_title {
     text-align: center;
     margin-bottom: 1em;
     font-size: 24px;
