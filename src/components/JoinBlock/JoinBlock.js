@@ -1,4 +1,3 @@
-
 /*// connecting it with its css, but mostly i with bootstrap*/
 import 'bootstrap/dist/css/bootstrap.min.css'
 /*// so it it actual bootstrap*/
@@ -6,14 +5,10 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import classes from './Joinblock.module.css';
 /*// i am using webstorm and it
-
 is automatically imports everything i need from react library
 * axios is used for api post and gets*/
 
-
-
-
-function JoinBlock(props) {
+function JoinBlock({ onLogin }) {
 
     const [chatID, setChatID] = React.useState('');
     const [userName, setUserName] = React.useState('');
@@ -21,24 +16,25 @@ function JoinBlock(props) {
 /*    // this Hook allows me to change imput
     // to class before going to the value*/
 
-    const createOrLogin = (e) => {
-        e.preventDefault();
+    const createOrLogin = async (e) => {;
         if (!chatID || !userName){
             return alert('Incorrent inputs');
         }
-        setLoading(true);
-        axios.post('/chats', {
+        const obj = {
             chatID,
             userName,
-        }).then(props.onLogin)
+        };
+        setLoading(true);
+        await axios.post('/chats', obj);
+        onLogin(obj);
     };
 
     return (
 
       <div className={classes.Auth_form_container}>
+
           <form className={classes.Auth_form}>
               <div className={classes.Auth_form_content}>
-
                   <h3 className={classes.Auth_form_title}>Join Chat</h3>
 
                   <div className='form-group mt-3'>
@@ -65,7 +61,6 @@ function JoinBlock(props) {
                   </div>
 {/*                  //Input form for username*/}
 
-
                   <div className='d-grid gap-2 mt-3'>
                       <button  disabled={loading} className='btn btn-primary' onClick={createOrLogin}>
                           {loading ? 'Joining...' : 'Join'}
@@ -75,7 +70,6 @@ function JoinBlock(props) {
               </div>
           </form>
       </div>
-
 
   );
 }

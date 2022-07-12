@@ -1,0 +1,14 @@
+.user {
+    background-color: white;
+    border-radius: 25px;
+    margin: 5px;
+    border-style: solid;
+    border-color: darkgray;
+    border-width: 2px;
+}
+
+.userName {
+    position: relative;
+    top: -12.5px;
+    left: 12.5px;
+}
