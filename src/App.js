@@ -16,6 +16,7 @@ function App() {
         users: [],
         messages: [],
     });
+    /*this ract hook is used for initial state*/
 
     const onLogin = async (obj) => {
         dispatch({
@@ -30,6 +31,7 @@ function App() {
             payload: data,
         });
     };
+    /*this  arrow function is created to send data from user to the back end*/
 
     const setUsers= (users) => {
         dispatch({
@@ -37,6 +39,7 @@ function App() {
         payload: users,
     });
     };
+    /*arrow function to */
 
     const newMessage = (message) => {
         dispatch({
@@ -50,11 +53,14 @@ function App() {
         socket.on('CHAT:SET_USERS', setUsers);
         socket.on('CHAT:NEW_MESSAGE', newMessage);
     }, []);
+    /*we need to use this hook to side effect porcess whithour renrendering.
+    So we can send new messages and update users list with no bugs*/
 
     return (
         <div>
             {!state.isAuth ? (<JoinBlock onLogin={onLogin}/>) : (<Dialog {...state} onNewMessage={newMessage}/>)}
         </div>
     )};
+/* if the user has "authorized status, then we render his chat, else we render authrizatoin block"*/
 
 export default App;

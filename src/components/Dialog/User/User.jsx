@@ -5,11 +5,7 @@ function User(props) {
 
 return(
 
-    <div className={classes.user}>
-        <img/>
-        <div className={classes.userName}> {props.userName}</div>
-    </div>
-
+    <li key={props.name + props.index}>{props.name}</li>
 )};
 
 export default User

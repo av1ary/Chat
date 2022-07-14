@@ -2,6 +2,7 @@ import classes from './Dialog.module.css'
 import React from 'react'
 import User from './User/User'
 import socket from '../socket';
+import Messages from "./Messages/Messages";
 
 
 function Dialog({ users, messages, userName, chatID, onNewMessage }) {
@@ -31,7 +32,7 @@ function Dialog({ users, messages, userName, chatID, onNewMessage }) {
         <div className={classes.users}>
             Users ({users.length}):
             {users.map((name, index) => (
-                <li key={name + index}>{name}</li>
+                <User name={name} index={index}/>
             ))}
         </div>
 
@@ -42,12 +43,7 @@ function Dialog({ users, messages, userName, chatID, onNewMessage }) {
 
                 <div ref={messagesRef} className="messages">
                     {messages.map((message) => (
-                        <div >
-                            <p className={classes.message}>{message.text}</p>
-                            <div>
-                                <span>{message.userName}</span>
-                            </div>
-                        </div>
+                        <Messages message={message}/>
                     ))}
                 </div>
 
