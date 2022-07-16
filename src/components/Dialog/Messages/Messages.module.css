@@ -4,10 +4,14 @@
     margin-bottom: 10px;
     padding: 10px;
     background-color: #A8DDFD;
-    width: 200px;
-    height: 50px;
+    min-width: 200px;
+    min-height: 40px;
     text-align: left;
     font: 400 .9em 'Open Sans', sans-serif;
     border: 1px solid #97C6E3;
     border-radius: 10px;
+}
+
+.messageSender{
+    font-size: 9px;
 }

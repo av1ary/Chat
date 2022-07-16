@@ -3,9 +3,12 @@ import React from 'react'
 
 function User(props) {
 
-return(
+    return(
 
-    <li key={props.name + props.index}>{props.name}</li>
+    <div
+        className={classes.user} key={props.name + props.index}>
+        <div className={classes.userName}> {props.name} </div>
+    </div>
 )};
 
 export default User

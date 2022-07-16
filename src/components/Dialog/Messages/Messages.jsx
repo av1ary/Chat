@@ -4,10 +4,10 @@ import React from 'react'
 function Messages(props) {
     return(
 
-        <div >
-            <p className={classes.message}>{props.message.text}</p>
+        <div className={classes.message}>
+            <p>{props.message.text}</p>
             <div>
-                <span>{props.message.userName}</span>
+                <span className={classes.messageSender}>{props.message.userName}</span>
             </div>
         </div>
 
